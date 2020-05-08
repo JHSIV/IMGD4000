@@ -11,6 +11,7 @@ The tags that determine how the objects in the world are treated are as follows:
 - Fast   : A piece of ground that is cheaper to move on, mapped to a cost of 0.5. Fast tiles are light blue.
 - Slow   : A piece of ground that is more expensive to move on, mapped to a cost of 2.0. Slow tiles are sand-colored.
 - Avoid  : A piece of ground with a very high cost of 5.0. Avoid tiles are red.
+
 The cost mapping for each is handled entirely by the BP_AI_Pathfinder AIController blueprint, stored in its GroundCosts map. The set of valid ground tags to consider is likewise stored in its GroundTypes array. None of this data besides the tags themselves are applied to the scene objects.
 
 Once the level has been analyzed, the program performs the A* pathfinding algorithm with the pawn actor, in this case the white sphere, starting from its initial position. If a successful path was generated, the pawn then moves along it tile by tile.
