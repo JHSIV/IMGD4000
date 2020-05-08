@@ -16,4 +16,5 @@ The cost mapping for each is handled entirely by the BP_AI_Pathfinder AIControll
 Once the level has been analyzed, the program performs the A* pathfinding algorithm with the pawn actor, in this case the white sphere, starting from its initial position. If a successful path was generated, the pawn then moves along it tile by tile.
 
 A video of this in pathfinding system in action can be found here: https://youtu.be/UjdqR5xRZJY
+
 The Source Code for this can be found under the Pathfinding folder of this repository on the master branch.
