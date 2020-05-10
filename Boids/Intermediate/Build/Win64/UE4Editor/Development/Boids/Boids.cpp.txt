@@ -1,0 +1,2 @@
+C:\Users\hstad\Documents\PersonalSite\IMGD4000\Boids\Intermediate\Build\Win64\UE4Editor\Development\Boids\Definitions.Boids.h
+C:\Users\hstad\Documents\PersonalSite\IMGD4000\Boids\Source\Boids\Boids.h
