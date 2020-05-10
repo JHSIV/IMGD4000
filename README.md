@@ -1,6 +1,21 @@
 # IMGD4000
 Course Projects for IMGD 4000, a class offered at Worcester Polytechnic Institute
 
+## Project: Boids
+I implemented a simple game incorporating a boids agent-based simulation in Unreal Engine using a C++-based approach.
+
+The objective of this game is to free all of the Boids as quickly as possible. Moving your Boids nearby the cages (cubes) will lower its health, with each nearby Boid doing a point of damage. When a cage's health is depleted, it breaks and releases more Boids that get added to your flock. Once all of the boids have been freed, the timer stops and the game ends.
+
+Controls:
+- A/Left: Steer the flock to the left
+- D/Right: Steer the flock to the right
+
+A video of this game in action can be found here: (link pending)
+
+The Source Code for this can be found under the Pathfinding folder of this repository on the master branch.
+
+(This assignment is not yet completed)
+
 ## Project: A* Pathfinding
 I implemented the A* pathfinding algorithm in Unreal Engine using a Blueprint-based approach. The specific implementation I used follows a grid-based system, where actors with specific tags indicating the type of ground or object they represent are placed in a scene with a specific spacing (in this case, every 400 units). When the game starts, the Ground objects in the room are analyzed to create a mapping of valid coordinate vectors to costs. If objects have multiple tags, they are treated as having the one with the highest cost. 
 The tags that determine how the objects in the world are treated are as follows:
@@ -16,6 +31,6 @@ The cost mapping for each is handled entirely by the BP_AI_Pathfinder AIControll
 
 Once the level has been analyzed, the program performs the A* pathfinding algorithm with the pawn actor, in this case the white sphere, starting from its initial position. If a successful path was generated, the pawn then moves along it tile by tile.
 
-A video of this in pathfinding system in action can be found here: https://youtu.be/UjdqR5xRZJY
+A video of this pathfinding system in action can be found here: https://youtu.be/UjdqR5xRZJY
 
 The Source Code for this can be found under the Pathfinding folder of this repository on the master branch.
