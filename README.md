@@ -2,7 +2,7 @@
 Course Projects for IMGD 4000, a class offered at Worcester Polytechnic Institute
 
 ## Project: Boids
-I implemented a simple game incorporating a boids agent-based simulation in Unreal Engine using a C++-based approach.
+I implemented a simple game incorporating an agent-based simulation in Unreal Engine using a C++-based approach.
 
 The objective of this game is to free all of the Boids as quickly as possible. Moving your Boids nearby the cages (cubes) will lower its health, with each nearby Boid doing a point of damage. When a cage's health is depleted, it breaks and releases more Boids that get added to your flock. Once all of the boids have been freed, the timer stops and the game ends.
 
@@ -12,7 +12,7 @@ Controls:
 
 A video of this game in action can be found here: (link pending)
 
-The Source Code for this can be found under the Pathfinding folder of this repository on the master branch.
+The source code for this can be found under the Boids folder of this repository on the master branch.
 
 (This assignment is not yet completed)
 
@@ -33,4 +33,4 @@ Once the level has been analyzed, the program performs the A* pathfinding algori
 
 A video of this pathfinding system in action can be found here: https://youtu.be/UjdqR5xRZJY
 
-The Source Code for this can be found under the Pathfinding folder of this repository on the master branch.
+The source code for this can be found under the Pathfinding folder of this repository on the master branch.
