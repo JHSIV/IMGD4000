@@ -17,7 +17,7 @@ class BOIDS_API ABoidsGameModeBase : public AGameModeBase
 
 	UPROPERTY(EditAnywhere)
 	class UStaticMeshComponent* AgentMesh;
-
+	UPROPERTY(EditAnywhere)
 	class UFlockingManager* Manager;
 
 	virtual void BeginPlay() override;

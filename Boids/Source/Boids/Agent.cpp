@@ -21,9 +21,9 @@ void AAgent::Init(UStaticMeshComponent *mesh, int id) {
 /*
  * Update this boid agent
  */
-void AAgent::Advance(FVector velocityChange) {
+void AAgent::Advance(FVector newVelocity) {
 	FVector loc = GetActorLocation();
-	Velocity += velocityChange;
+	Velocity = newVelocity;
 	SetActorLocation(loc + Velocity);
 }
 

@@ -15,12 +15,16 @@ class BOIDS_API UFlockingManager : public UObject
 	public:
 		GENERATED_BODY()
 
+		void SetupPlayerInputComponent(class UInputComponent* InputComponent);
 		void Init(UWorld *world, UStaticMeshComponent *mesh);
 		void CleanUp();
 		void Flock();
-	
+		void Steer(float axisValue);
+			
 	private:
 		UWorld *World;
-		bool initialized;
+		float Direction;
+		FVector SteeringSpeed;
+		bool Initialized;
 		TArray<class AAgent*> Agents;
 };
