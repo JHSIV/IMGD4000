@@ -1,5 +1,9 @@
 
-Pathfinding/Intermediate/
-Pathfinding/Saved/
-Boids/Intermediate/
-Boids/Saved/
+Pathfinding/Binaries
+Pathfinding/DerivedDataCache
+Pathfinding/Intermediate
+Pathfinding/Saved
+Boids/Binaries
+Boids/DerivedDataCache
+Boids/Intermediate
+Boids/Saved
