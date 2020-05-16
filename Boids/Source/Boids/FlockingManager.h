@@ -27,15 +27,17 @@ class BOIDS_API AFlockingManager : public APawn
 		void Init(UWorld *world, UStaticMeshComponent *mesh);
 		void CleanUp();
 		void Flock();
-		void Steer(float axisValue);
-		
+		void Steer(float AxisValue);
+
 		virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 		virtual void Tick(float DeltaTime) override;
 			
 	private:
-		UWorld *World;
-		float Direction;
-		FVector SteeringSpeed;
-		bool Initialized;
+		UWorld* World;
+		float Direction = 0.f;
+		FVector SteeringSpeed = FVector(0.f);
+		bool Initialized = false;
 		TArray<class AAgent*> Agents;
+
+		int Sign(float Number);
 };

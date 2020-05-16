@@ -4,6 +4,8 @@
 #include "BoidsGameModeBase.h"
 #include "FlockingManager.h"
 
+#define TICK_TIME 0.016
+
 ABoidsGameModeBase::ABoidsGameModeBase() {
     // load FlockingManager blueprint
     static ConstructorHelpers::FClassFinder<AFlockingManager> ManagerBPClass(TEXT("/Game/Blueprints/BP_FlockingManager"));
@@ -20,7 +22,7 @@ ABoidsGameModeBase::ABoidsGameModeBase() {
 void ABoidsGameModeBase::BeginPlay() {
     Super::BeginPlay();
     UWorld* world = GetWorld();
-    Manager = world->SpawnActor<AFlockingManager>(ManagerClass, FVector(0.f,0.f,0.f), FRotator());
+    Manager = world->SpawnActor<AFlockingManager>(ManagerClass, FVector(0.f), FRotator(0.f));
     AController* controller = UGameplayStatics::GetPlayerController(world, 0);
     controller->Possess(Manager);
     controller->SetControlRotation(FRotator(-45.f, 0.f, 0.f));
@@ -30,5 +32,10 @@ void ABoidsGameModeBase::BeginPlay() {
 void ABoidsGameModeBase::Tick(float DeltaTime) {
     Super::Tick(DeltaTime);
     Manager->CleanUp();
-    Manager->Flock();
+    ElapsedTime += DeltaTime;
+    while (ElapsedTime > TICK_TIME)
+    {
+        Manager->Flock();
+        ElapsedTime -= TICK_TIME;
+    }
 }
