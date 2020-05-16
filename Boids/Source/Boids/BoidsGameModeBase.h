@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "FlockingManager.h"
 #include "GameFramework/GameModeBase.h"
 #include "BoidsGameModeBase.generated.h"
 
@@ -18,7 +19,9 @@ class BOIDS_API ABoidsGameModeBase : public AGameModeBase
 	UPROPERTY(EditAnywhere)
 	class UStaticMeshComponent* AgentMesh;
 	UPROPERTY(EditAnywhere)
-	class UFlockingManager* Manager;
+	TSubclassOf<AFlockingManager> ManagerClass;
+	UPROPERTY(EditAnywhere)
+	AFlockingManager* Manager;
 
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;

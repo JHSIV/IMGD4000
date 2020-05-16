@@ -11,19 +11,19 @@ class BOIDS_API AAgent : public AActor
 {
 	GENERATED_BODY()
 	
-public:	
-	AAgent();
-	void Init( UStaticMeshComponent *mesh, int id );
-	UStaticMeshComponent * Mesh;
-	FVector Velocity;
-	bool ToDelete = false;
+	public:	
+		AAgent();
+		void Init( UStaticMeshComponent *mesh, int id );
+		UStaticMeshComponent * Mesh;
+		FVector Velocity;
+		bool ToDelete = false;
 
-	void Advance(FVector velocityChange);
+		void Advance(FVector velocityChange);
 
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+		// Called every frame
+		virtual void Tick(float DeltaTime) override;
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	protected:
+		// Called when the game starts or when spawned
+		virtual void BeginPlay() override;
 };

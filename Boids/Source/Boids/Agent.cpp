@@ -25,6 +25,7 @@ void AAgent::Advance(FVector newVelocity) {
 	FVector loc = GetActorLocation();
 	Velocity = newVelocity;
 	SetActorLocation(loc + Velocity);
+	SetActorRotation(Velocity.ToOrientationRotator());
 }
 
 /*

@@ -4,22 +4,33 @@
 
 #include "CoreMinimal.h"
 #include "Agent.h"
+#include "Camera/CameraComponent.h"
+#include "GameFramework/SpringArmComponent.h"
 #include "FlockingManager.generated.h"
 
 /**
- * 
+ * Controls and monitors the Boid agent flock
  */
 UCLASS()
-class BOIDS_API UFlockingManager : public UObject
+class BOIDS_API AFlockingManager : public APawn
 {
-	public:
-		GENERATED_BODY()
+	GENERATED_BODY()
 
-		void SetupPlayerInputComponent(class UInputComponent* InputComponent);
+	public:
+		AFlockingManager();
+
+		UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+		class USpringArmComponent* CameraBoom;
+		UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+		class UCameraComponent* FollowCamera;
+
 		void Init(UWorld *world, UStaticMeshComponent *mesh);
 		void CleanUp();
 		void Flock();
 		void Steer(float axisValue);
+		
+		virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
+		virtual void Tick(float DeltaTime) override;
 			
 	private:
 		UWorld *World;
