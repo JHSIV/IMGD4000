@@ -5,7 +5,7 @@ Course Projects for IMGD 4000, a class offered at Worcester Polytechnic Institut
 I attmepted to implemented a simple game incorporating an agent-based simulation in Unreal Engine using a C++-based approach.
 
 The intended objective of this game is to free all of the Boids as quickly as possible. Moving your Boids nearby the cages (cubes) will lower its health, with each nearby Boid doing a point of damage. When a cage's health is depleted, it breaks and releases more Boids that get added to your flock. Once all of the boids have been freed, the timer stops and the game ends.
-UNfortunately, I ran out of time (even with the extension) and was only able to implement basic flocking and steering.
+### Unfortunately, I ran out of time (even with the extension) and was only able to implement basic flocking and steering.
 
 Controls:
 - A/Left: Steer the flock to the left
