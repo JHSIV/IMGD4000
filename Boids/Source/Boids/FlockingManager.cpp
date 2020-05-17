@@ -7,7 +7,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "DrawDebugHelpers.h"
 
-#define AGENT_COUNT 10
+#define AGENT_COUNT 20
 #define RULE1_WEIGHT 0.01
 #define RULE2_THRESHOLD 200
 #define RULE2_WEIGHT 0.5
@@ -16,7 +16,7 @@
 #define STEERING_SPEED 4
 #define DISTANCE_CONSTRAINT 15000
 #define DISTANCE_CONSTRAINT_WEIGHT 0.4
-#define HEIGHT_CONSTRAINT 500
+#define HEIGHT_CONSTRAINT 800
 #define HEIGHT_CONSTRAINT_WEIGHT 0.2
 #define SPEED_CONSTRAINT 60
 
