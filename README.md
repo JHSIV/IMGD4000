@@ -11,7 +11,7 @@ Controls:
 - A/Left: Steer the flock to the left
 - D/Right: Steer the flock to the right
 
-A video of this game in action can be found here: (link pending)
+A video of this game in action can be found here: https://youtu.be/f42tNtvmmPY
 
 The source code for this can be found under the Boids folder of this repository on the master branch.
 
