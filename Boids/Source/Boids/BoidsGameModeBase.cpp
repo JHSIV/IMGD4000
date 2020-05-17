@@ -1,7 +1,7 @@
 // Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
 
-#include "Kismet/GameplayStatics.h"
 #include "BoidsGameModeBase.h"
+#include "Kismet/GameplayStatics.h"
 #include "FlockingManager.h"
 
 #define TICK_TIME 0.016
@@ -32,10 +32,49 @@ void ABoidsGameModeBase::BeginPlay() {
 void ABoidsGameModeBase::Tick(float DeltaTime) {
     Super::Tick(DeltaTime);
     Manager->CleanUp();
-    ElapsedTime += DeltaTime;
-    while (ElapsedTime > TICK_TIME)
+
+    // Update Timer
+    if (GameStart && !GameEnd)
+    {
+       ElapsedTime += DeltaTime;
+       while (ElapsedTime > 1.f)
+       {
+           ElapsedSeconds += 1;
+           ElapsedTime -= 1;
+       }
+
+       // End Game
+       if (false) // All Boids Free
+       {
+           EndGame();
+       } 
+    }
+
+    // Update Boids
+    TickTime += DeltaTime;
+    while (TickTime > TICK_TIME)
     {
         Manager->Flock();
-        ElapsedTime -= TICK_TIME;
+        TickTime -= TICK_TIME;
     }
+}
+
+/*
+ * Start the game on command
+ */
+void ABoidsGameModeBase::StartGame() {
+    if (!GameEnd)
+    {
+        GameStart = true;
+        //TODO set InfoWidget to show timer
+    }
+}
+
+/*
+ * End game 
+ */
+void ABoidsGameModeBase::EndGame()
+{
+    GameEnd = true;
+    //TODO set InfoWidget to show result  
 }

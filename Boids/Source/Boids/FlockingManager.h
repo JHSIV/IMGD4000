@@ -34,10 +34,11 @@ class BOIDS_API AFlockingManager : public APawn
 			
 	private:
 		UWorld* World;
-		float Direction = 0.f;
+		float Direction = 90.f;
 		FVector SteeringSpeed = FVector(0.f);
 		bool Initialized = false;
 		TArray<class AAgent*> Agents;
 
+		void StartGame();
 		int Sign(float Number);
 };
